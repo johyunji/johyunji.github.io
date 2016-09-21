@@ -5,6 +5,26 @@
 		<title></title>
 	</head>
 	<body>
-		hello world
+		<script>
+			//학교: 함수
+			function school() {
+				var univ="계원예술대학교";
+				var major="디지털미디어디자인과";
+				document.write("학교 : "+univ+" "+major+"<br />");
+			}
+			school();
+			
+			//성격: 배열
+			var personality = ["끈기", "집중력"];
+			personality.push("꼼꼼함");
+			document.write("성격 : " + personality+"<br />");
+			
+			//좋아하는 것: 반복문
+			document.write("좋아하는 것 : ");
+			var like = ["인디음악,", "영화감상"];
+			for (var i = 0; i < like.length; i++) {
+				document.write(like[i]);
+			}
+		</script>
 	</body>
 </html>
