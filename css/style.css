@@ -10,18 +10,18 @@
 }
 @font-face {
     font-family: 'Circular';
-    src: url('../font/circular-medium.eot');
-    src: url('../font/circular-medium.eot?#iefix') format('embedded-opentype'),
-         url('../font/circular-medium.woff') format('woff'),
-         url('../font/circular-medium.ttf') format('truetype');
+    src: url('../font/circular-Medium.eot');
+    src: url('../font/circular-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../font/circular-Medium.woff') format('woff'),
+         url('../font/circular-Medium.ttf') format('truetype');
 	font-weight: 500;
 }
 @font-face {
     font-family: 'Circular';
-    src: url('../font/circular-bold.eot');
-    src: url('../font/circular-bold.eot?#iefix') format('embedded-opentype'),
-         url('../font/circular-bold.woff') format('woff'),
-         url('../font/circular-bold.ttf') format('truetype');
+    src: url('../font/circular-Bold.eot');
+    src: url('../font/circular-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../font/circular-Bold.woff') format('woff'),
+         url('../font/circular-Bold.ttf') format('truetype');
 	font-weight: 700;
 }
 /* reset css */
