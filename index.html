@@ -2,42 +2,372 @@
 <html lang="ko">
 <head>
 	<meta charset="utf-8" />
-	<title></title>
+	<title>THE HOT 10</title>
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
-	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
-	<script src="js/jquery.scrollify.min.js" type="text/javascript"></script>
-	<script src="js/masonry.pkgd.min.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$.scrollify({
-				section : "section",
-				standardScrollElements: "#top5"
-			});
-		});
-	</script>
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script src="js/TweenMax.min.js" type="text/javascript"></script>
+	<script src="js/jquery.parallax.js" type="text/javascript"></script>
+	<script src="js/main.js" type="text/javascript"></script>
 </head>
 <body>
-	<section id="section1" data-section-name="main">
+	<h1><a href="/">spotify</a></h1>
+	<section>
+		<div class="siteTitle">
+			<h2>The Hot 10</h2>
+			<p>Meet this week's most popular songs on Spotify chart.</p>
+		</div>
 		<div class="wrap">
-			<div class="content" id="waves">
-				<h1>
-					<span>2016</span>
-					<span>Top<br />Summer<br />Songs</span>
-				</h1>
-				<h2>Relive the moments and the music that made summer to remember.</h2>
-			</div>
-			<div class="covers">
-				<ul>
-					<li><img src="img/default.jpg" width="100%" /></li>
-					<li><img src="img/default.jpg" width="100%" /></li>
-					<li><img src="img/default.jpg" width="100%" /></li>
-					<li><img src="img/default.jpg" width="100%" /></li>
-					<li><img src="img/default.jpg" width="100%" /></li>
-				</ul>
+			<div class="cardWrap">
+				<div class="card song01">
+					<div class="rank">
+						<div class="number">#01</div>
+						<div class="box1"></div>
+					</div>
+					<div class="artistimg">
+						<img src="img/artist_01.jpg" width="540" alt="artist" />
+					</div>
+					<div class="info">
+						<div class="artist">The Chainsmokers</div>
+						<div class="title">Closer</div>
+						<p class="desc">
+							No one is surprised to see this summer ditty on the list. It's actually No. 1 right now. It was No. 1 last week. "Don't Let Me Down" and "Roses" both had good runs, but “Closer” is the pick of the litter. That swinging synth, the bright claps, the constant and subtle bells in the background. It's perfect summer anthem material.You were done before it even played.
+						</p>
+						<div class="box2"></div>
+					</div>
+					<div class="audio">
+						<div class="playbtn">pause/play</div>
+						<audio>
+							<source src="media/sample01.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+					<div class="bottom">
+						<div class="albumartWrap">
+							<div class="albumart"><img src="img/cover_01.jpg" width="220" alt="album art" /></div>
+						</div>
+						<div class="count">
+							<div class="times">452,751,081</div>
+							<div class="listened">Listened</div>
+						</div>
+						<div class="box3"></div>
+					</div>
+				</div>
+				<!-- song01 end -->
+				<div class="card song02">
+					<div class="rank">
+						<div class="number">#02</div>
+						<div class="box1"></div>
+					</div>
+					<div class="artistimg">
+						<img src="img/artist_02.jpg" width="540" alt="artist" />
+					</div>
+					<div class="info">
+						<div class="artist">The Weeknd</div>
+						<div class="title">Starboy</div>
+						<p class="desc">
+							"Starboy" was released on September 22, 2016, following the announcement of the album and its accompanying artwork a day earlier. Lyrically, "Starboy" incorporates themes of the extravagance associated with a celebrity lifestyle, as well as discussing how the celebrity lifestyle can make an entertainer fragile.
+						</p>
+						<div class="box2"></div>
+					</div>
+					<div class="audio">
+						<div class="playbtn">pause/play</div>
+						<audio>
+							<source src="media/sample02.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+					<div class="bottom">
+						<div class="albumartWrap">
+							<div class="albumart"><img src="img/cover_02.jpg" width="220" alt="album art" /></div>
+						</div>
+						<div class="count">
+							<div class="times">148,507,605</div>
+							<div class="listened">Listened</div>
+						</div>
+						<div class="box3"></div>
+					</div>
+				</div>
+				<!-- song02 end -->
+				<div class="card song03">
+					<div class="rank">
+						<div class="number">#03</div>
+						<div class="box1"></div>
+					</div>
+					<div class="artistimg">
+						<img src="img/artist_03.jpg" width="540" alt="artist" />
+					</div>
+					<div class="info">
+						<div class="artist">DJ Snake</div>
+						<div class="title">Let Me Love You</div>
+						<p class="desc">
+							"Let Me Love You" debuted at number 12 on the Billboard Hot 100 on the issue dated 27 August 2016. The single opened at number-one on Digital Songs with 113,000 downloads, becoming DJ Snake's first and Bieber's sixth number-one on the chart.
+						</p>
+						<div class="box2"></div>
+					</div>
+					<div class="audio">
+						<div class="playbtn">pause/play</div>
+						<audio>
+							<source src="media/sample03.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+					<div class="bottom">
+						<div class="albumartWrap">
+							<div class="albumart"><img src="img/cover_03.jpg" width="220" alt="album art" /></div>
+						</div>
+						<div class="count">
+							<div class="times">337,331,705</div>
+							<div class="listened">Listened</div>
+						</div>
+						<div class="box3"></div>
+					</div>
+				</div>
+				<!-- song03 end -->
+				<div class="card song04">
+					<div class="rank">
+						<div class="number">#04</div>
+						<div class="box1"></div>
+					</div>
+					<div class="artistimg">
+						<img src="img/artist_04.jpg" width="540" alt="artist" />
+					</div>
+					<div class="info">
+						<div class="artist">Major Lazer</div>
+						<div class="title">Cold Water</div>
+						<p class="desc">
+							Newsweek's Tufayel Ahmed and Digital Spy's Megan Davies called it a future summer hit. Raisa Bruner of Time shared the same opinion, explaining: "This is the kind of jam you want to play as you road trip with the windows down; the kind of catchy slow-burn that gives you feels but will also get you going at a dance party."
+						</p>
+						<div class="box2"></div>
+					</div>
+					<div class="audio">
+						<div class="playbtn">pause/play</div>
+						<audio>
+							<source src="media/sample04.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+					<div class="bottom">
+						<div class="albumartWrap">
+							<div class="albumart"><img src="img/cover_04.jpg" width="220" alt="album art" /></div>
+						</div>
+						<div class="count">
+							<div class="times">438,315,304</div>
+							<div class="listened">Listened</div>
+						</div>
+						<div class="box3"></div>
+					</div>
+				</div>
+				<!-- song04 end -->
+				<div class="card song05">
+					<div class="rank">
+						<div class="number">#05</div>
+						<div class="box1"></div>
+					</div>
+					<div class="artistimg">
+						<img src="img/artist_05.jpg" width="540" alt="artist" />
+					</div>
+					<div class="info">
+						<div class="artist">Sia</div>
+						<div class="title">The Greatest</div>
+						<p class="desc">
+							Billboard editor Gil Kaufman described "The Greatest" as a "uplifting, poppy song with a subtle island vibe." Upon the song's release, "The Greatest" debuted on several charts worldwide, including the US Billboard Hot 100 at number 52, UK Singles Chart at 49, and Australian Singles Chart at number 25.
+						</p>
+						<div class="box2"></div>
+					</div>
+					<div class="audio">
+						<div class="playbtn">pause/play</div>
+						<audio>
+							<source src="media/sample05.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+					<div class="bottom">
+						<div class="albumartWrap">
+							<div class="albumart"><img src="img/cover_05.jpg" width="220" alt="album art" /></div>
+						</div>
+						<div class="count">
+							<div class="times">138,252,521</div>
+							<div class="listened">Listened</div>
+						</div>
+						<div class="box3"></div>
+					</div>
+				</div>
+				<!-- song05 end -->
+				<div class="card song06">
+					<div class="rank">
+						<div class="number">#06</div>
+						<div class="box1"></div>
+					</div>
+					<div class="artistimg">
+						<img src="img/artist_06.jpg" width="540" alt="artist" />
+					</div>
+					<div class="info">
+						<div class="artist">Twenty One Pilots</div>
+						<div class="title">Heathens</div>
+						<p class="desc">
+							"Heathens" is released as the lead single for the motion picture soundtrack for the film Suicide Squad (2016). The song peaked at number two on the US Billboard Hot 100, behind The Chainsmokers' "Closer", becoming the duo's second top 5 single on the Hot 100.
+						</p>
+						<div class="box2"></div>
+					</div>
+					<div class="audio">
+						<div class="playbtn">pause/play</div>
+						<audio>
+							<source src="media/sample06.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+					<div class="bottom">
+						<div class="albumartWrap">
+							<div class="albumart"><img src="img/cover_06.jpg" width="220" alt="album art" /></div>
+						</div>
+						<div class="count">
+							<div class="times">352,588,941</div>
+							<div class="listened">Listened</div>
+						</div>
+						<div class="box3"></div>
+					</div>
+				</div>
+				<!-- song06 end -->
+				<div class="card song07">
+					<div class="rank">
+						<div class="number">#07</div>
+						<div class="box1"></div>
+					</div>
+					<div class="artistimg">
+						<img src="img/artist_07.jpg" width="540" alt="artist" />
+					</div>
+					<div class="info">
+						<div class="artist">Ariana Grande</div>
+						<div class="title">Side To Side</div>
+						<p class="desc">
+							"Side to Side" is a song recorded by American singer Ariana Grande, released on August 30, 2016 as the third single for her studio album, Dangerous Woman (2016). The song features guest vocals from Trinidadian-American rapper Nicki Minaj. It is a reggae-pop song with elements of R&B.
+						</p>
+						<div class="box2"></div>
+					</div>
+					<div class="audio">
+						<div class="playbtn">pause/play</div>
+						<audio>
+							<source src="media/sample07.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+					<div class="bottom">
+						<div class="albumartWrap">
+							<div class="albumart"><img src="img/cover_07.jpg" width="220" alt="album art" /></div>
+						</div>
+						<div class="count">
+							<div class="times">171,712,387</div>
+							<div class="listened">Listened</div>
+						</div>
+						<div class="box3"></div>
+					</div>
+				</div>
+				<!-- song07 end -->
+				<div class="card song08">
+					<div class="rank">
+						<div class="number">#08</div>
+						<div class="box1"></div>
+					</div>
+					<div class="artistimg">
+						<img src="img/artist_08.jpg" width="540" alt="artist" />
+					</div>
+					<div class="info">
+						<div class="artist">Martin Garrix</div>
+						<div class="title">In the Name of Love</div>
+						<p class="desc">
+							Kat Bein of Billboard wrote the song shows Garrix's artistic growth, "[it's] a far cry from the hard-hitting, stomp-ready beat of his breakthrough", and called the song "a charming track, as delicate as it is clean. It's Garrix sharing his softer side." Idolator's Rachel Sonis felt the song sounded "like the summer anthem we’ve been waiting for all along.
+						</p>
+						<div class="box2"></div>
+					</div>
+					<div class="audio">
+						<div class="playbtn">pause/play</div>
+						<audio>
+							<source src="media/sample08.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+					<div class="bottom">
+						<div class="albumartWrap">
+							<div class="albumart"><img src="img/cover_08.jpg" width="220" alt="album art" /></div>
+						</div>
+						<div class="count">
+							<div class="times">213,972,020</div>
+							<div class="listened">Listened</div>
+						</div>
+						<div class="box3"></div>
+					</div>
+				</div>
+				<!-- song08 end -->
+				<div class="card song09">
+					<div class="rank">
+						<div class="number">#09</div>
+						<div class="box1"></div>
+					</div>
+					<div class="artistimg">
+						<img src="img/artist_09.jpg" width="540" alt="artist" />
+					</div>
+					<div class="info">
+						<div class="artist">Drake</div>
+						<div class="title">One Dance</div>
+						<p class="desc">
+							Pitchfork Media stated of the song: "Kyla's voice and that resonant piano mash are the first things heard before they cave into a throbbing, wine-worthy tropical thumper. The message is as simple as the beat is mesmerizing: "One Dance" is about the spiritual connection two people can have in a club, when vibrations charge the air and they lose themselves.
+						</p>
+						<div class="box2"></div>
+					</div>
+					<div class="audio">
+						<div class="playbtn">pause/play</div>
+						<audio>
+							<source src="media/sample09.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+					<div class="bottom">
+						<div class="albumartWrap">
+							<div class="albumart"><img src="img/cover_09.jpg" width="220" alt="album art" /></div>
+						</div>
+						<div class="count">
+							<div class="times">898,476,051</div>
+							<div class="listened">Listened</div>
+						</div>
+						<div class="box3"></div>
+					</div>
+				</div>
+				<!-- song09 end -->
+				<div class="card song10">
+					<div class="rank">
+						<div class="number">#10</div>
+						<div class="box1"></div>
+					</div>
+					<div class="artistimg">
+						<img src="img/artist_10.jpg" width="540" alt="artist" />
+					</div>
+					<div class="info">
+						<div class="artist">Shawn Mendes</div>
+						<div class="title">Treat You Better</div>
+						<p class="desc">
+							The song peaked at number six on the US Billboard Hot 100, making it Mendes' second top 10 single. In Canada, the song has peaked at number seven on the Canadian Hot 100, passing "Life of the Party" as his highest-peaking single in his home country.
+						</p>
+						<div class="box2"></div>
+					</div>
+					<div class="audio">
+						<div class="playbtn">pause/play</div>
+						<audio>
+							<source src="media/sample10.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+					<div class="bottom">
+						<div class="albumartWrap">
+							<div class="albumart"><img src="img/cover_10.jpg" width="220" alt="album art" /></div>
+						</div>
+						<div class="count">
+							<div class="times">365,882,852</div>
+							<div class="listened">Listened</div>
+						</div>
+						<div class="box3"></div>
+					</div>
+				</div>
+				<!-- song10 end -->
 			</div>
 		</div>
-	</section>
-	<section id="section2" data-section-name="top5">
+		<div class="prevWrap">
+			<a class="prev">Prev</a>
+		</div>
+		<div class="nextWrap">
+			<a class="next">Next</a>
+		</div>
+		<div class="bg"></div>
 	</section>
 </body>
 </html>
