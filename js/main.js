@@ -100,18 +100,15 @@ $(document).ready(function() {
 	}
 
 	/* 애니메이팅 */
-    
-    //버튼 애니메이팅
-    $('.prev').animate({opacity:1,left:'-10px'},{duration:600,easing:'easeOutCubic'});
-    $('.prevWrap').animate({left:0},{duration:600,easing:'easeOutCubic'});
-    $('.next').animate({opacity:1,right:'-10px'},{duration:600,easing:'easeOutCubic'});
-    $('.nextWrap').animate({right:0},{duration:600,easing:'easeOutCubic'});
-    
-    //active 카드 등장
+	
+	//버튼 애니메이팅
+	$('.prev').animate({opacity:1,left:'-10px'},{duration:600,easing:'easeOutCubic'});
+	$('.prevWrap').animate({left:0},{duration:600,easing:'easeOutCubic'});
+	$('.next').animate({opacity:1,right:'-10px'},{duration:600,easing:'easeOutCubic'});
+	$('.nextWrap').animate({right:0},{duration:600,easing:'easeOutCubic'});
+	
+	//active 카드 등장
 	function activeAnimating() {
-		//애니메이팅 시작
-		isAnimating = true;
-		
 		//active 카드의 오디오 재생
 		var audio = $(".active audio")[0];
 		audio.play();
@@ -123,7 +120,10 @@ $(document).ready(function() {
 		});
 		
 		//active 카드 애니메이팅
-		$('.active .box1').delay(150).animate({opacity:1,width:'100%'},{duration:600,easing:'easeOutCubic'});
+		$('.active .box1').delay(150).animate({opacity:1,width:'100%'},{duration:600,easing:'easeOutCubic',function(){
+			//애니메이팅 시작
+			isAnimating = true;
+		}});
 		$('.active .number').delay(300).animate({opacity:1,width:'100%'},{duration:600,easing:'easeOutCubic'});
 		$('.active .artistimg').delay(450).animate({opacity:1,width:'100%'},{duration:600,easing:'easeOutCubic'});
 		$('.active .box2').delay(600).animate({opacity:1,width:'100%'},{duration:600,easing:'easeOutCubic'});
