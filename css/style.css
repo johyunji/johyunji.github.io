@@ -94,35 +94,37 @@ h1 a {
 	left: 50px;
 	z-index: 3;
 }
-/* top10 */
 .siteTitle {
 	position: absolute;
 	bottom: 20px;
-	right: 50px;
+	left: 50px;
 	z-index: 2;
-	text-align: right;
 }
 .siteTitle h2 {
 	font-size: 40px;
 	margin-bottom: 5px;
-	color: #485aff;
+	color: #b2fffb;
 	text-transform: uppercase;
 	font-weight: 700;
 }
 .siteTitle p {
 	font-size: 16px;
 }
+/* card */
 .wrap {
-	width: 860px;
+	width: calc(100% - 420px);
 	height: 100%;
-	margin: 0px auto;
 	position: relative;
+	top: 0;
+	left: 0;
 }
 .cardWrap {
-	width: 100%;
+	width: 860px;
 	height: 540px;
 	top: 50%;
+	left: 50%;
 	margin-top: -270px;
+	margin-left: -430px;
 	position: absolute;
 }
 .card {
@@ -256,7 +258,6 @@ h1 a {
 }
 .card .bottom .count {
 	float: left;
-	text-align: right;
 	position: absolute;
 	bottom: 20px;
 	right: 220px;
@@ -353,4 +354,61 @@ h1 a {
 	height: 100%;
 	opacity: 0.5;
 	mix-blend-mode: overlay;
+}
+/* chartList */
+.chartList {
+	width: 420px;
+	height: 100%;
+	background: #181717;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 3;
+	color: #fff;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.chartList table {
+	width: 100%;
+}
+.chartList tr {
+	display: block;
+	height: 90px;
+	position: relative;
+	left: 50px;
+	opacity: 0;
+	border-bottom: 1px solid #4b4a4a;
+	cursor: pointer;
+}
+.chartList tr:last-child {
+	border-bottom: 0;
+}
+.chartList tr td.list-rank {
+	display: block;
+	float: left;
+	width: 20px;
+	padding: 0 20px;
+	line-height: 90px;
+	font-size: 34px;
+	color: #7a7a7a;
+}
+.chartList tr td.list-info {
+	display: block;
+	float: left;
+	height: 38px;
+	padding: 26px 20px 26px 0;
+}
+.chartList tr td.list-info .list-title {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 6px;
+}
+.chartList tr td.list-info .list-artist {
+	display: block;
+	font-size: 14px;
+	color: #7a7a7a;
+}
+.chartList tr td.list-albumart {
+	width: 90px;
+	float: right;
 }
