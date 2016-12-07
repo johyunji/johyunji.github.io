@@ -110,7 +110,7 @@ h1 a {
 .siteTitle p {
 	font-size: 16px;
 }
-/* card */
+/* slide */
 .wrap {
 	width: calc(100% - 380px);
 	height: 100%;
@@ -118,7 +118,7 @@ h1 a {
 	top: 0;
 	left: 0;
 }
-.cardWrap {
+.slideWrap {
 	width: 860px;
 	height: 540px;
 	top: 50%;
@@ -127,19 +127,19 @@ h1 a {
 	margin-left: -430px;
 	position: absolute;
 }
-.card {
+.slide {
 	position: absolute;
 	width: 860px;
 	height: 540px;
 	display: block;
 }
-.card .rank {
+.slide .rank {
 	width: 110px;
 	position: absolute;
 	top: -20px;
 	left: -50px;
 }
-.card .rank .number {
+.slide .rank .number {
 	opacity: 0;
 	width: 0;
 	font-size: 60px;
@@ -148,7 +148,7 @@ h1 a {
 	left: -30px;
 	z-index: 2;
 }
-.card .rank .box1 {
+.slide .rank .box1 {
 	opacity: 0;
 	width: 0;
 	height: 60px;
@@ -158,21 +158,21 @@ h1 a {
 	right: 0;
 	z-index: 0;
 }
-.card .artistimg {
+.slide .artistimg {
 	opacity: 0;
 	width: 0;
 	height: 540px;
 	position: relative;
 	z-index: 1;
 }
-.card .info {
+.slide .info {
 	width: 430px;
 	position: absolute;
 	bottom: 200px;
 	right: -50px;
 	padding-bottom: 20px;
 }
-.card .info .artist {
+.slide .info .artist {
 	opacity: 0;
 	width: 0;
 	font-size: 40px;
@@ -182,7 +182,7 @@ h1 a {
 	z-index: 3;
 	white-space: nowrap;
 }
-.card .info .title {
+.slide .info .title {
 	opacity: 0;
 	font-size: 60px;
 	text-align: right;
@@ -193,7 +193,7 @@ h1 a {
 	white-space: nowrap;
 	color: #485aff;
 }
-.card .info .desc {
+.slide .info .desc {
 	opacity: 0;
 	font-size: 14px;
 	line-height: 18px;
@@ -202,7 +202,7 @@ h1 a {
 	right: -30px;
 	z-index: 3;
 }
-.card .info .box2 {
+.slide .info .box2 {
 	opacity: 0;
 	width: 0;
 	height: 100%;
@@ -212,7 +212,7 @@ h1 a {
 	right: 0;
 	z-index: 2;
 }
-.card .audio {
+.slide .audio {
 	width: 80px;
 	height: 80px;
 	position: absolute;
@@ -220,7 +220,7 @@ h1 a {
 	left: -20px;
 	z-index: 2;
 }
-.card .audio .playbtn {
+.slide .audio .playbtn {
 	opacity: 0;
 	width: 0;
 	height: 80px;
@@ -230,20 +230,20 @@ h1 a {
 	cursor: pointer;
 	transition: background-color 0.3s ease;
 }
-.card .audio .playbtn.play {
+.slide .audio .playbtn.play {
 	background-position: right !important;
 }
-.card .audio .playbtn:hover {
+.slide .audio .playbtn:hover {
 	background-color: rgba(178, 255, 251, 1);
 }
-.card .bottom {
+.slide .bottom {
 	width: 460px;
 	height: 220px;
 	position: absolute;
 	bottom: -60px;
 	right: 100px;
 }
-.card .bottom .albumartWrap {
+.slide .bottom .albumartWrap {
 	width: 220px;
 	height: 220px;
 	float: right;
@@ -252,28 +252,28 @@ h1 a {
 	right: -20px;
 	z-index: 1
 }
-.card .bottom .albumartWrap .albumart {
+.slide .bottom .albumartWrap .albumart {
 	opacity: 0;
 	width: 0;
 }
-.card .bottom .count {
+.slide .bottom .count {
 	float: left;
 	position: absolute;
 	bottom: 20px;
 	right: 220px;
 	z-index: 2;
 }
-.card .bottom .count .times {
+.slide .bottom .count .times {
 	opacity: 0;
 	width: 0;
 	font-size: 34px;
 	margin-bottom: 6px;
 }
-.card .bottom .count .listened {
+.slide .bottom .count .listened {
 	opacity: 0;
 	font-size: 20px;
 }
-.card .bottom .box3 {
+.slide .bottom .box3 {
 	opacity: 0;
 	width: 0;
 	height: 220px;

@@ -2,21 +2,21 @@ $(document).ready(function() {
 	/* json 데이터를 받은 dom 로드 */
 	$.getJSON('../data/chart.json', function(data) {
 		$.each(data, function(i, value) {
-			//카드
-			var cardsample = $('.cardsample').html();
-			var card = $('<div class="card">');
-			card.html(cardsample); //샘플의 html 내용을 카드 안에 넣기
-			$('.cardWrap').append(card); //데이터의 개수만큼 카드 추가
+			//슬라이드
+			var slidesample = $('.slidesample').html();
+			var slide = $('<div class="slide">');
+			slide.html(slidesample); //샘플의 html 내용을 슬라이드 안에 넣기
+			$('.slideWrap').append(slide); //데이터의 개수만큼 슬라이드 추가
 			
-			//추가된 카드마다 해당 인덱스의 데이터 입력
-			card.find('.number').text('#' + value.rank);
-			card.find('.artistimg').append('<img src="' + value.artistimg + '" width="540" alt="artist" />');
-			card.find('.artist').text(value.artist);
-			card.find('.title').text(value.title);
-			card.find('.desc').text(value.desc);
-			card.find('audio').append('<source src="' + value.audio + '" type="audio/mpeg">');
-			card.find('.albumart').append('<img src="' + value.albumart + '" width="220" alt="album art" />');
-			card.find('.times').text(value.count);
+			//추가된 슬라이드마다 해당 인덱스의 데이터 입력
+			slide.find('.number').text('#' + value.rank);
+			slide.find('.artistimg').append('<img src="' + value.artistimg + '" width="540" alt="artist" />');
+			slide.find('.artist').text(value.artist);
+			slide.find('.title').text(value.title);
+			slide.find('.desc').text(value.desc);
+			slide.find('audio').append('<source src="' + value.audio + '" type="audio/mpeg">');
+			slide.find('.albumart').append('<img src="' + value.albumart + '" width="220" alt="album art" />');
+			slide.find('.times').text(value.count);
 			
 			//리스트
 			var chartsample = $('.chartsample').html();
@@ -32,7 +32,7 @@ $(document).ready(function() {
 	});
 });
 $(document).ajaxComplete(function() { //ajax 로드 완료 후 
-	$('.cardsample, .chartsample').remove(); //샘플 삭제
+	$('.slidesample, .chartsample').remove(); //샘플 삭제
 	
 	/* 슬라이더 */
 	
@@ -40,8 +40,10 @@ $(document).ajaxComplete(function() { //ajax 로드 완료 후
 	var autoswitch_speed = 8000; //슬라이드 속도
 	var isAnimating = false; //다중클릭 방지
 	
-	var $first = $('.card').first();
-	var $last = $('.card').last();
+	var $first = $('.slide').first();
+	var $last = $('.slide').last();
+	var $prevBtn = $('.prevWrap');
+	var $nextBtn = $('.nextWrap');
 	var $bg = $('.bg');
 	var $playbtn = $('.playbtn');
 	var $chart = $('.chartList tr');
@@ -51,20 +53,20 @@ $(document).ajaxComplete(function() { //ajax 로드 완료 후
 	$chart.first().addClass('current');
 	
 	//전체 숨기고 첫번째만 보이기
-	$('.card').animate({opacity:0});
+	$('.slide').animate({opacity:0});
 	$('.active').animate({opacity:1}, function() {
-		activeOn(); //active 카드 애니메이션
+		activeOn(); //active 슬라이드 애니메이션
 	});
 	
 	//이전 버튼 클릭 시 이전으로
-	$('.prevWrap').click(function() {
+	$prevBtn.click(function() {
 		if (isAnimating === false) { //애니메이팅이 종료됐을 때만 동작
 			prevSlide();
 		}
 	});
 	
 	//다음 버튼 클릭 시 다음으로
-	$('.nextWrap').click(function() {
+	$nextBtn.click(function() {
 		if (isAnimating === false) {
 			nextSlide();
 		}
@@ -90,11 +92,11 @@ $(document).ajaxComplete(function() { //ajax 로드 완료 후
 		var slideIntv = setInterval(nextSlide, autoswitch_speed);
 		
 		//마우스 엔터일 때 일시정지
-		$('.cardWrap').mouseenter(function() {
+		$('.slideWrap').mouseenter(function() {
 			clearInterval(slideIntv);
 		});
 		//마우스를 떼면 슬라이드 시작
-		$('.cardWrap').mouseleave(function() {
+		$('.slideWrap').mouseleave(function() {
 			slideIntv = setInterval(nextSlide, autoswitch_speed);
 		});
 	}
@@ -113,7 +115,7 @@ $(document).ajaxComplete(function() { //ajax 로드 완료 후
 		}
 		
 		$active.removeClass('active'); //기존 active를 제거 후
-		$next.addClass('active'); //다음 카드를 active
+		$next.addClass('active'); //다음 슬라이드를 active
 		
 		activeOff(); //현재 active를 off
 	}
@@ -138,10 +140,10 @@ $(document).ajaxComplete(function() { //ajax 로드 완료 후
 	}
 
 	//버튼 애니메이팅
+	$prevBtn.animate({left:0},{duration:600,easing:'easeOutCubic'});
+	$nextBtn.animate({right:0},{duration:600,easing:'easeOutCubic'});
 	$('.prev').animate({opacity:1,left:'-10px'},{duration:600,easing:'easeOutCubic'});
-	$('.prevWrap').animate({left:0},{duration:600,easing:'easeOutCubic'});
 	$('.next').animate({opacity:1,right:'-10px'},{duration:600,easing:'easeOutCubic'});
-	$('.nextWrap').animate({right:0},{duration:600,easing:'easeOutCubic'});
 
 	/* active */
 	
@@ -202,7 +204,7 @@ $(document).ajaxComplete(function() { //ajax 로드 완료 후
 		isAnimating = true;
 		
 		//전체 오디오의 볼륨이 페이드아웃 되며 정지
-		var audio = $('.card audio');
+		var audio = $('.slide audio');
 		audio.animate({volume:0},1500,function() {
 			for (i=0; i<audio.length; i++) {
 				audio[i].pause(); //일시정지 후,
@@ -213,7 +215,7 @@ $(document).ajaxComplete(function() { //ajax 로드 완료 후
 		
 		$bg.stop().delay(1750).fadeOut({duration:600,easing:'easeOutCubic',complete:function() { //bg의 백그라운드 이미지 지우기
 			$playbtn.removeClass('play'); //play 클래스가 다른 active에서 추가돼있는 것을 방지
-			$('.card').stop().animate({opacity:0},{complete:function() { //모두 숨기고	
+			$('.slide').stop().animate({opacity:0},{complete:function() { //모두 숨기고	
 				$active.stop().animate({opacity:1},{complete:function() { //active만 보이기
 					activeOn(); //active 등장
 				}});
@@ -243,11 +245,13 @@ $(document).ajaxComplete(function() { //ajax 로드 완료 후
 	//리스트에서 클릭 시, 해당 곡만 active
 	$chart.click(function() {
 		var index = $chart.index(this); //차트가 몇 번째인지 index 값을 정의
-		if (!$('.card').eq(index).hasClass('active')) { //해당 index의 카드가 active되지 않았을 때만 작동
-			activeChange();
-			$('.active').removeClass('active'); //기존 active를 제거 후
-			$('.card').eq(index).addClass('active'); //해당 번째를 active
-			activeOff();
+		if (!$('.slide').eq(index).hasClass('active')) { //해당 index의 슬라이드가 active되지 않았을 때만 작동
+			if (isAnimating === false) { //애니메이팅이 종료됐을 때만 동작
+				activeChange();
+				$('.active').removeClass('active'); //기존 active를 제거 후
+				$('.slide').eq(index).addClass('active'); //해당 번째를 active
+				activeOff();
+			}
 		}
 	});
 	
