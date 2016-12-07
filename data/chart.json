@@ -1,0 +1,93 @@
+[
+	{
+		"rank": "01",
+		"artist": "The Chainsmokers",
+		"title": "Closer",
+		"desc": "No one is surprised to see this summer ditty on the list. It's actually No. 1 right now. It was No. 1 last week. “Don't Let Me Down” and “Roses” both had good runs, but “Closer” is the pick of the litter. That swinging synth, the bright claps, the constant and subtle bells in the background. It's perfect summer anthem material. You were done before it even played.",
+		"artistimg": "img/artist_01.jpg",
+		"albumart": "img/cover_01.jpg",
+		"audio": "media/sample01.mp3",
+		"count": "452,751,081"
+	},{
+		"rank": "02",
+		"artist": "The Weeknd",
+		"title": "Starboy",
+		"desc": "“Starboy” was released on September 22, 2016, following the announcement of the album and its accompanying artwork a day earlier. Lyrically, “Starboy” incorporates themes of the extravagance associated with a celebrity lifestyle, as well as discussing how the celebrity lifestyle can make an entertainer fragile.",
+		"artistimg": "img/artist_02.jpg",
+		"albumart": "img/cover_02.jpg",
+		"audio": "media/sample02.mp3",
+		"count": "148,507,605"
+	},{
+		"rank": "03",
+		"artist": "DJ Snake",
+		"title": "Let Me Love You",
+		"desc": "“Let Me Love You” debuted at number 12 on the Billboard Hot 100 on the issue dated 27 August 2016. The single opened at number-one on Digital Songs with 113,000 downloads, becoming DJ Snake's first and Bieber's sixth number-one on the chart.",
+		"artistimg": "img/artist_03.jpg",
+		"albumart": "img/cover_03.jpg",
+		"audio": "media/sample03.mp3",
+		"count": "337,331,705"
+	},{
+		"rank": "04",
+		"artist": "Major Lazer",
+		"title": "Cold Water",
+		"desc": "Newsweek's Tufayel Ahmed and Digital Spy's Megan Davies called it a future summer hit. Raisa Bruner of Time shared the same opinion, explaining: “This is the kind of jam you want to play as you road trip with the windows down; the kind of catchy slow-burn that gives you feels but will also get you going at a dance party.”",
+		"artistimg": "img/artist_04.jpg",
+		"albumart": "img/cover_04.jpg",
+		"audio": "media/sample04.mp3",
+		"count": "438,315,304"
+	},{
+		"rank": "05",
+		"artist": "Sia",
+		"title": "The Greatest",
+		"desc": "Billboard editor Gil Kaufman described “The Greatest” as a “uplifting, poppy song with a subtle island vibe.” Upon the song's release, “The Greatest” debuted on several charts worldwide, including the US Billboard Hot 100 at number 52, UK Singles Chart at 49, and Australian Singles Chart at number 25.",
+		"artistimg": "img/artist_05.jpg",
+		"albumart": "img/cover_05.jpg",
+		"audio": "media/sample05.mp3",
+		"count": "138,252,521"
+	},{
+		"rank": "06",
+		"artist": "Twenty One Pilots",
+		"title": "Heathens",
+		"desc": "“Heathens” is released as the lead single for the motion picture soundtrack for the film Suicide Squad (2016). The song peaked at number two on the US Billboard Hot 100, behind The Chainsmokers' “Closer”, becoming the duo's second top 5 single on the Hot 100.",
+		"artistimg": "img/artist_06.jpg",
+		"albumart": "img/cover_06.jpg",
+		"audio": "media/sample06.mp3",
+		"count": "352,588,941"
+	},{
+		"rank": "07",
+		"artist": "Ariana Grande",
+		"title": "Side To Side",
+		"desc": "“Side to Side” is a song recorded by American singer Ariana Grande, released on August 30, 2016 as the third single for her studio album, Dangerous Woman (2016). The song features guest vocals from Trinidadian-American rapper Nicki Minaj. It is a reggae-pop song with elements of R&B.",
+		"artistimg": "img/artist_07.jpg",
+		"albumart": "img/cover_07.jpg",
+		"audio": "media/sample07.mp3",
+		"count": "171,712,387"
+	},{
+		"rank": "08",
+		"artist": "Martin Garrix",
+		"title": "In the Name of Love",
+		"desc": "Kat Bein of Billboard wrote the song shows Garrix's artistic growth, “[it's] a far cry from the hard-hitting, stomp-ready beat of his breakthrough”, and called the song “a charming track, as delicate as it is clean. It's Garrix sharing his softer side.” Idolator's Rachel Sonis felt the song sounded “like the summer anthem we’ve been waiting for all along.”",
+		"artistimg": "img/artist_08.jpg",
+		"albumart": "img/cover_08.jpg",
+		"audio": "media/sample08.mp3",
+		"count": "213,972,020"
+	},{
+		"rank": "09",
+		"artist": "Drake",
+		"title": "One Dance",
+		"desc": "Pitchfork Media stated of the song: “Kyla's voice and that resonant piano mash are the first things heard before they cave into a throbbing, wine-worthy tropical thumper. The message is as simple as the beat is mesmerizing: “One Dance” is about the spiritual connection two people can have in a club, when vibrations charge the air and they lose themselves.”",
+		"artistimg": "img/artist_09.jpg",
+		"albumart": "img/cover_09.jpg",
+		"audio": "media/sample09.mp3",
+		"count": "898,476,051"
+	},{
+		"rank": "10",
+		"artist": "Shawn Mendes",
+		"title": "Treat You Better",
+		"desc": "The song peaked at number six on the US Billboard Hot 100, making it Mendes' second top 10 single. In Canada, the song has peaked at number seven on the Canadian Hot 100, passing “Life of the Party” as his highest-peaking single in his home country.",
+		"artistimg": "img/artist_10.jpg",
+		"albumart": "img/cover_10.jpg",
+		"audio": "media/sample10.mp3",
+		"count": "365,882,852"
+	}
+]

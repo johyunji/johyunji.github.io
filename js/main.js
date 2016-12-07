@@ -1,51 +1,84 @@
 $(document).ready(function() {
+	/* json 데이터를 받은 dom 로드 */
+	$.getJSON('../data/chart.json', function(data) {
+		$.each(data, function(i, value) {
+			//카드
+			var cardsample = $('.cardsample').html();
+			var card = $('<div class="card">');
+			card.html(cardsample); //샘플의 html 내용을 카드 안에 넣기
+			$('.cardWrap').append(card); //데이터의 개수만큼 카드 추가
+			
+			//추가된 카드마다 해당 인덱스의 데이터 입력
+			card.find('.number').text('#' + value.rank);
+			card.find('.artistimg').append('<img src="' + value.artistimg + '" width="540" alt="artist" />');
+			card.find('.artist').text(value.artist);
+			card.find('.title').text(value.title);
+			card.find('.desc').text(value.desc);
+			card.find('audio').append('<source src="' + value.audio + '" type="audio/mpeg">');
+			card.find('.albumart').append('<img src="' + value.albumart + '" width="220" alt="album art" />');
+			card.find('.times').text(value.count);
+			
+			//리스트
+			var chartsample = $('.chartsample').html();
+			var chart = $('<tr>');
+			chart.html(chartsample);
+			$('table').append(chart);
+			
+			chart.find('.list-rank').text(i+1);
+			chart.find('.list-title').text(value.title);
+			chart.find('.list-artist').text(value.artist);
+			chart.find('.list-albumart').append('<img src="' + value.albumart + '" width="90" height="90" alt="album art" />');
+		});
+	});
+});
+$(document).ajaxComplete(function() { //ajax 로드 완료 후 
+	$('.cardsample, .chartsample').remove(); //샘플 삭제
+	
 	/* 슬라이더 */
 	
 	var autoswitch = false; //자동 슬라이드
 	var autoswitch_speed = 8000; //슬라이드 속도
 	var isAnimating = false; //다중클릭 방지
 	
-	var $first = $('.card:first'); //첫번째 카드
-	var $last = $('.card:last'); //마지막 카드
-	var $bg = $('.bg'); //배경
-	var $playbtn = $('.playbtn'); //재생버튼
-	var $chartList = $('.chartList tr'); //차트리스트
+	var $first = $('.card').first();
+	var $last = $('.card').last();
+	var $bg = $('.bg');
+	var $playbtn = $('.playbtn');
+	var $chart = $('.chartList tr');
 	
-	//첫번째 카드 active
+	//첫번째 active
 	$first.addClass('active');
-	$chartList.first().addClass('current');
+	$chart.first().addClass('current');
 	
-	// 모든 카드 숨기기
+	//전체 숨기고 첫번째만 보이기
 	$('.card').animate({opacity:0});
-	
-	//첫번째 카드 보이기
 	$('.active').animate({opacity:1}, function() {
 		activeOn(); //active 카드 애니메이션
 	});
 	
-	//이전 버튼 클릭 시 이전 카드로 슬라이드
+	//이전 버튼 클릭 시 이전으로
 	$('.prevWrap').click(function() {
 		if (isAnimating === false) { //애니메이팅이 종료됐을 때만 동작
 			prevSlide();
 		}
 	});
 	
-	//다음 버튼 클릭 시 다음 카드로 슬라이드
+	//다음 버튼 클릭 시 다음으로
 	$('.nextWrap').click(function() {
-		if (isAnimating === false) { //애니메이팅이 종료됐을 때만 동작
+		if (isAnimating === false) {
 			nextSlide();
 		}
 	});
 	
-	//방향키를 누를 때 슬라이드
+	//방향키를 클릭 시
 	$(document).keydown(function(e) {
-		if (e.keyCode == 37) { //왼쪽 키를 누를 시 이전 카드로 슬라이드
-			if (isAnimating === false) { //애니메이팅이 종료됐을 때만 동작
+		if (e.keyCode == 37) { //왼쪽 키를 누를 시 이전으로
+			if (isAnimating === false) {
 				prevSlide();
 			}
 			return false;
-		} else if (e.keyCode == 39) { //오른쪽 키를 누를 시 다음 카드로 슬라이드
-			if (isAnimating === false) { //애니메이팅이 종료됐을 때만 동작
+		} else if (e.keyCode == 39) { //오른쪽 키를 누를 시 다음으로
+			if (isAnimating === false) {
 				nextSlide();
 			}
 			return false;
@@ -58,11 +91,11 @@ $(document).ready(function() {
 		
 		//마우스 엔터일 때 일시정지
 		$('.cardWrap').mouseenter(function() {
-		    clearInterval(slideIntv);
+			clearInterval(slideIntv);
 		});
 		//마우스를 떼면 슬라이드 시작
 		$('.cardWrap').mouseleave(function() {
-		    slideIntv = setInterval(nextSlide, autoswitch_speed);
+			slideIntv = setInterval(nextSlide, autoswitch_speed);
 		});
 	}
 
@@ -70,9 +103,9 @@ $(document).ready(function() {
 	function nextSlide() {
 		var $next, $active = $('.active');
 		
-		activeChange(); //카드 off 애니메이팅
+		activeChange(); //active 변경
 		
-		//마지막 카드인지 확인
+		//active가 마지막 번째인지 확인
 		if ($active.is($last)) {
 			$next = $first; //마지막일 경우 첫번째를 active
 		} else {
@@ -80,9 +113,9 @@ $(document).ready(function() {
 		}
 		
 		$active.removeClass('active'); //기존 active를 제거 후
-		$next.addClass('active'); //다음에 오는 카드를 active
+		$next.addClass('active'); //다음 카드를 active
 		
-		activeOff(); //현재 카드 off
+		activeOff(); //현재 active를 off
 	}
 	
 	//이전으로 슬라이드
@@ -91,7 +124,7 @@ $(document).ready(function() {
 		
 		activeChange();
 		
-		//첫번째 카드인지 확인
+		//active가 첫번째인지 확인
 		if ($active.is($first)) {
 			$prev = $last; //첫번째일 경우 마지막번째를 active
 		} else {
@@ -126,38 +159,39 @@ $(document).ready(function() {
 		//배경이미지 변경
 		var $img = $active.find('.artistimg').children('img').attr('src');
 		$bg.fadeOut(function() {
-			$(this).css({'background-image':'url('+$img+')'}).fadeIn(); //현재 카드의 아티스트이미지가 bg의 백그라운드 이미지로 페이드인
+			$(this).css({'background-image':'url('+$img+')'}).fadeIn(); //active의 아티스트이미지가 bg의 백그라운드로 페이드인
 		});
 		
 		//애니메이팅
 		$active.find('.box1, .number, .artistimg, .box2, .artist, .title, .desc, .box3, .albumart, .times, .listened, .playbtn').each(function(i) {
 			$(this).delay(150 + i*150).animate({opacity:1,width:'100%'},{duration:600,easing:'easeOutCubic'});
-		}).promise().done(function() {
+		}).promise().done(function() { //each 함수 종료 시
 			isAnimating = false; //애니메이팅 종료
 		});
 		
-		//active의 index에 해당하는 차트를 리스트에 표시
-		var current = $active.index();
-		$chartList.eq(current).addClass('current');
+		//active된 곡을 리스트에서 표시
+		var current = $active.index(); //active의 index값을 불러와서
+		$chart.eq(current).addClass('current'); //해당 index의 차트에 current 클래스 추가
 	};
 	
-	//active 변경 시 애니메이팅 (등장 시의 역순으로)
+	//active 변경 시 (등장 시의 역순으로)
 	function activeChange() {
 		var $active = $('.active');
 		
 		//애니메이팅 시작
 		isAnimating = true;
 		
+		//애니메이팅
 		$active.find('.title, .desc').delay(900).animate({opacity:0},{duration:600,easing:'easeOutCubic'});
 		$active.find('.box1, .number, .artistimg, .box2, .artist, .box3, .albumart, .times, .listened, .playbtn').each(function(i) {
 			$(this).delay(1750 - i*150).animate({opacity:0,width:0},{duration:600,easing:'easeOutCubic'});
-		}).promise().done(function() {
+		}).promise().done(function() { //each 함수 종료 시
+			//차트의 current 클래스 삭제
+			var current = $active.index();
+			$('.current').removeClass('current');
+			
 			isAnimating = false; //애니메이팅 종료
 		});
-		
-		//차트리스트의 current 클래스 삭제
-		var current = $active.index();
-		$('.current').removeClass('current');
 	}
 	
 	//active 퇴장
@@ -167,23 +201,24 @@ $(document).ready(function() {
 		//애니메이팅 시작
 		isAnimating = true;
 		
-		//모든 오디오의 볼륨이 페이드아웃 되며 정지
+		//전체 오디오의 볼륨이 페이드아웃 되며 정지
 		var audio = $('.card audio');
 		audio.animate({volume:0},1500,function() {
 			for (i=0; i<audio.length; i++) {
-				audio[i].pause(); //오디오 일시정지 후,
+				audio[i].pause(); //일시정지 후,
 				audio[i].currentTime = 0; //처음으로 되감기 함으로써 정지와 같은 효과
 				audio[i].volume = 1; //0이 되었던 볼륨을 1로 되돌림
 			}
 		});
 		
-		$bg.stop().delay(1900).fadeOut({duration:600,easing:'easeOutCubic',complete:function() { //bg의 백그라운드 이미지 지우기
-			$playbtn.removeClass('play'); //플레이버튼을 클릭했을 경우, 다음 active되는 카드에서 play 클래스가 추가돼있는 것을 방지하기 위해 클래스 삭제로 초기화 해줌
-			$('.card').stop().animate({opacity:0},{complete:function() { //카드 숨기고
-				isAnimating = false; //애니메이팅 종료
+		$bg.stop().delay(1750).fadeOut({duration:600,easing:'easeOutCubic',complete:function() { //bg의 백그라운드 이미지 지우기
+			$playbtn.removeClass('play'); //play 클래스가 다른 active에서 추가돼있는 것을 방지
+			$('.card').stop().animate({opacity:0},{complete:function() { //모두 숨기고	
 				$active.stop().animate({opacity:1},{complete:function() { //active만 보이기
 					activeOn(); //active 등장
 				}});
+				
+				isAnimating = false; //애니메이팅 종료
 			}});
 		}});
 	}
@@ -198,17 +233,17 @@ $(document).ready(function() {
 		}
 	});
 	
-	/* 차트리스트 */
+	/* 리스트 */
 	
 	//순차적으로 delay 되며 등장
-	$chartList.each(function(i) {
+	$chart.each(function(i) {
 		$(this).delay(300 + i*150).animate({opacity:1,left:0},{duration:600,easing:'easeOutCubic'});
 	});
 	
 	//리스트에서 클릭 시, 해당 곡만 active
-	$chartList.click(function() {
-		var index = $chartList.index(this); //차트가 몇 번째인지 index 값을 정의
-		if (!$('.card').eq(index).hasClass('active')) { //해당 번째의 카드가 active되지 않았을 때만 작동
+	$chart.click(function() {
+		var index = $chart.index(this); //차트가 몇 번째인지 index 값을 정의
+		if (!$('.card').eq(index).hasClass('active')) { //해당 index의 카드가 active되지 않았을 때만 작동
 			activeChange();
 			$('.active').removeClass('active'); //기존 active를 제거 후
 			$('.card').eq(index).addClass('active'); //해당 번째를 active
@@ -224,8 +259,7 @@ $(document).ready(function() {
 		$('.artist, .title, .desc').parallax(-10,e);
 	});
 });
-/* section 리사이즈 */
 $(window).resize(function() {
-	$('section').height($(window).height() - $('section').offset().top); //윈도우 크기가 변경되면 섹션의 높이를 윈도우 높이와 동일하게
+	$('body, section').height($(window).height() - $('section').offset().top); //윈도우 크기가 변경되면 윈도우 높이와 동일하게
 });
 $(window).resize();
